@@ -1,0 +1,25 @@
+language: ruby
+dist: trusty
+rvm:
+  - 2.5.3
+cache:
+  - bundler
+addons:
+  postgres: '9.5'
+before_install:
+  - gem install bundler -v 2.0.2
+script:
+  - bundle exec rails db:create RAILS_ENV=test
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rake
+services:
+  - redis-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: fvDdZFtDllnsuz6r9KhDIbeHWu0fadBZLjy2O4w9KFtv54y0fkjMwzszyxXM88LScCy3MAUM7/oJrWz9IRrVMMXNnyvLexCRmpnKfovX4Edqeyz9ZB8gAD2Wp6K5QXdBSZP0F2PW02w7m5EB9rDuG+byFFlVRcl8YItlwyqWFEUI8rSqLdSLmAXsLrWjCWpeW9eL87Q5WVqjPx5p457PBy2AJuqnWoEuRbLsl5VcthzW0xJTXUjivT4o3QW/rTnI53cSibg8CHmD9RDhrUM5xCGJxWGNQ5PiKrxCnsi3PRa5klJrjvFemVVW+zdWl1mVY30rKDGIlhtKAMW1hJBgLeAoinmCZeF0+UIjjP39pD+wwNgw51xvSx45PxJ3dsfGOwvCLT+adW4lwqYcIbst3tw02uwPHAFJmwJVowjm/00v9cABmgQOKMQLl7+/CD46erMzk8LynkSBTLBZqsW1TB/E86Dk3/FcU+7d6zPCl/nSMikgxDdhk3viO+YS4GbyapwDF6WjUzbpjPwSYkdKOR+AiG1a9SK8MgmXvhvIVhZm52rf9uCmJm3S+WOAlAnPjnsTMskqhySy5W2hlt1jRvn6DQUt6PS+m620tWMFCozp7GzSK8BxwLEhHbTTmu0k91WukLrV/hp4wzx6no4r1yk3mO5gUgfrGgtHzaIldZI=
+  app: currency-r4te
+  on:
+    repo: artemnvkv/currency_rate
+  run:
+    - rake db:migrate
