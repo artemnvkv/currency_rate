@@ -6,6 +6,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../components/App'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import "react-datepicker/dist/react-datepicker.css";
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(

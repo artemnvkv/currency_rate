@@ -82,6 +82,7 @@ class Admin extends React.Component {
               <DatePicker
                 className="form-control form-control-sm"
                 name="expiration_date"
+                autoComplete="off"
                 selected={this.state.expiration_date}
                 onChange={this.handleChangeDate}
                 showTimeSelect
