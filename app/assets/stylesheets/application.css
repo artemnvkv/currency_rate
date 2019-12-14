@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+.RateForm {
+  padding: 60px 0;
+}
+
+.RateForm form {
+  margin: 0 auto;
+  max-width: 450px;
+}
+
+.RateForm .error {
+  color: red;
+  margin-top: 5px;
+}
+
+.RateForm #formBasicExchangeRate {
+  width: auto;
+}
+
+.RateForm .col-sm-8 {
+  display: flex;
+  justify-content: center;
+}
+
+.RateForm h2 {
+  margin-bottom: 30px;
+}
