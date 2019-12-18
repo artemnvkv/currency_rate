@@ -9,8 +9,8 @@ addons:
 before_install:
   - gem install bundler -v 2.0.2
 script:
-  - bundle exec rails db:create RAILS_ENV=test
-  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rake db:create RAILS_ENV=test
+  - bundle exec rake db:migrate RAILS_ENV=test
   - bundle exec rake
 services:
   - redis-server
