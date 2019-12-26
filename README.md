@@ -11,4 +11,10 @@ Web-приложение (Rails&React). Для отображения текущ
 3. rake run
 
 ## Dependencies
-* Rails
+* Ruby
+* Ruby on Rails
+* React
+* ActionCable
+* RSpec
+* Sidekiq
+
